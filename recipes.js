@@ -9,7 +9,7 @@ xmlhttp.onreadystatechange = function() {
 
 xmlhttp.open(
   "GET",
-  "https://rawgit.com/crelder/recipe-shoppinglist-generator/master/recipes.json",
+  "https://json.extendsclass.com/bin/cd76152ae2e4",
   false
 );
 
@@ -96,10 +96,10 @@ var vm = new Vue({
   },
   methods: {
     onCopy: function(e) {
-      alert("Folgende Liste ist in die Zwischenablage kopiert:\n\n" + e.text);
+      alert("The following list is copied to the clipboard:\n\n" + e.text);
     },
     onError: function(e) {
-      alert("Fehler beim Kopieren in die Zwischenablage.");
+      alert("Error.");
     }
   },
   computed: {
@@ -126,8 +126,8 @@ var vm = new Vue({
     clipboardShoppingList: function() {
       date = new Date();
       return (
-        "Einkaufsliste für den " +
-        date.toLocaleDateString("de-DE", {
+        "Lista zakupow z dnia:  " +
+        date.toLocaleDateString("pl-PL", {
           weekday: "short",
           year: "numeric",
           month: "long",
@@ -170,7 +170,7 @@ var vm = new Vue({
             selectedRecipesSorted[i].ingredients[j].name +
             "\n";
         }
-        output += '\n"' + selectedRecipesSorted[i].comment + ' Priorität ' + selectedRecipesSorted[i].priority + '"' + "\n\n\n";
+        output += '\n"' + selectedRecipesSorted[i].comment + ' Priorytet ' + selectedRecipesSorted[i].priority + '"' + "\n\n\n";
       }
       return output;
     },
